@@ -1,0 +1,148 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00EA8F15-5463-4498-891B-650141B69E84}|src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj|d:\\users\\gabri\\documents\\vs-net\\projeto quod fiap - copia\\src\\quod.antifraude.api\\controllers\\validacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EA8F15-5463-4498-891B-650141B69E84}|src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj|solutionrelative:src\\quod.antifraude.api\\controllers\\validacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0E33810-0E9B-464C-A56B-C9C2DBE91DDC}|src\\Quod.Antifraude.Services\\Quod.Antifraude.Services.csproj|d:\\users\\gabri\\documents\\vs-net\\projeto quod fiap - copia\\src\\quod.antifraude.services\\detection\\frauddetectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0E33810-0E9B-464C-A56B-C9C2DBE91DDC}|src\\Quod.Antifraude.Services\\Quod.Antifraude.Services.csproj|solutionrelative:src\\quod.antifraude.services\\detection\\frauddetectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0E33810-0E9B-464C-A56B-C9C2DBE91DDC}|src\\Quod.Antifraude.Services\\Quod.Antifraude.Services.csproj|d:\\users\\gabri\\documents\\vs-net\\projeto quod fiap - copia\\src\\quod.antifraude.services\\detection\\ifrauddetectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0E33810-0E9B-464C-A56B-C9C2DBE91DDC}|src\\Quod.Antifraude.Services\\Quod.Antifraude.Services.csproj|solutionrelative:src\\quod.antifraude.services\\detection\\ifrauddetectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EA8F15-5463-4498-891B-650141B69E84}|src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj|d:\\users\\gabri\\documents\\vs-net\\projeto quod fiap - copia\\src\\quod.antifraude.api\\models\\documentosrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EA8F15-5463-4498-891B-650141B69E84}|src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj|solutionrelative:src\\quod.antifraude.api\\models\\documentosrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EA8F15-5463-4498-891B-650141B69E84}|src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj|d:\\users\\gabri\\documents\\vs-net\\projeto quod fiap - copia\\src\\quod.antifraude.api\\quod.antifraude.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{00EA8F15-5463-4498-891B-650141B69E84}|src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj|solutionrelative:src\\quod.antifraude.api\\quod.antifraude.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EA8F15-5463-4498-891B-650141B69E84}|src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj|d:\\users\\gabri\\documents\\vs-net\\projeto quod fiap - copia\\src\\quod.antifraude.api\\models\\validacaorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EA8F15-5463-4498-891B-650141B69E84}|src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj|solutionrelative:src\\quod.antifraude.api\\models\\validacaorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12243D0C-A6AB-4B42-B5C3-5C3E516F707E}|src\\Quod.Antifraude.Core\\Quod.Antifraude.Core.csproj|d:\\users\\gabri\\documents\\vs-net\\projeto quod fiap - copia\\src\\quod.antifraude.core\\models\\basecapturadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12243D0C-A6AB-4B42-B5C3-5C3E516F707E}|src\\Quod.Antifraude.Core\\Quod.Antifraude.Core.csproj|solutionrelative:src\\quod.antifraude.core\\models\\basecapturadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EA8F15-5463-4498-891B-650141B69E84}|src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj|d:\\users\\gabri\\documents\\vs-net\\projeto quod fiap - copia\\src\\quod.antifraude.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EA8F15-5463-4498-891B-650141B69E84}|src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj|solutionrelative:src\\quod.antifraude.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ValidacaoController.cs",
+              "DocumentMoniker": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Api\\Controllers\\ValidacaoController.cs",
+              "RelativeDocumentMoniker": "src\\Quod.Antifraude.Api\\Controllers\\ValidacaoController.cs",
+              "ToolTip": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Api\\Controllers\\ValidacaoController.cs",
+              "RelativeToolTip": "src\\Quod.Antifraude.Api\\Controllers\\ValidacaoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T18:19:03.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Api\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Quod.Antifraude.Api\\Program.cs",
+              "ToolTip": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Api\\Program.cs",
+              "RelativeToolTip": "src\\Quod.Antifraude.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T21:12:03.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IFraudDetectionService.cs",
+              "DocumentMoniker": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Services\\Detection\\IFraudDetectionService.cs",
+              "RelativeDocumentMoniker": "src\\Quod.Antifraude.Services\\Detection\\IFraudDetectionService.cs",
+              "ToolTip": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Services\\Detection\\IFraudDetectionService.cs",
+              "RelativeToolTip": "src\\Quod.Antifraude.Services\\Detection\\IFraudDetectionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T23:19:37.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FraudDetectionService.cs",
+              "DocumentMoniker": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Services\\Detection\\FraudDetectionService.cs",
+              "RelativeDocumentMoniker": "src\\Quod.Antifraude.Services\\Detection\\FraudDetectionService.cs",
+              "ToolTip": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Services\\Detection\\FraudDetectionService.cs",
+              "RelativeToolTip": "src\\Quod.Antifraude.Services\\Detection\\FraudDetectionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T23:19:51.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ValidacaoRequest.cs",
+              "DocumentMoniker": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Api\\Models\\ValidacaoRequest.cs",
+              "RelativeDocumentMoniker": "src\\Quod.Antifraude.Api\\Models\\ValidacaoRequest.cs",
+              "ToolTip": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Api\\Models\\ValidacaoRequest.cs",
+              "RelativeToolTip": "src\\Quod.Antifraude.Api\\Models\\ValidacaoRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T23:22:50.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseCapturaDto.cs",
+              "DocumentMoniker": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Core\\Models\\BaseCapturaDto.cs",
+              "RelativeDocumentMoniker": "src\\Quod.Antifraude.Core\\Models\\BaseCapturaDto.cs",
+              "ToolTip": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Core\\Models\\BaseCapturaDto.cs",
+              "RelativeToolTip": "src\\Quod.Antifraude.Core\\Models\\BaseCapturaDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T23:35:19.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Quod.Antifraude.Api",
+              "DocumentMoniker": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj",
+              "RelativeDocumentMoniker": "src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj",
+              "ToolTip": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj",
+              "RelativeToolTip": "src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-27T23:49:46.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DocumentosRequest.cs",
+              "DocumentMoniker": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Api\\Models\\DocumentosRequest.cs",
+              "RelativeDocumentMoniker": "src\\Quod.Antifraude.Api\\Models\\DocumentosRequest.cs",
+              "ToolTip": "D:\\Users\\Gabri\\Documents\\Vs-net\\Projeto QUOD Fiap - Copia\\src\\Quod.Antifraude.Api\\Models\\DocumentosRequest.cs",
+              "RelativeToolTip": "src\\Quod.Antifraude.Api\\Models\\DocumentosRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T23:49:53.447Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

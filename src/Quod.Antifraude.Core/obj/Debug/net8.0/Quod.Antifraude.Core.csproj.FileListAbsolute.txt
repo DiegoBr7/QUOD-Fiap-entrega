@@ -1,0 +1,24 @@
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap\src\Quod.Antifraude.Core\bin\Debug\net8.0\Quod.Antifraude.Core.deps.json
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap\src\Quod.Antifraude.Core\bin\Debug\net8.0\Quod.Antifraude.Core.dll
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap\src\Quod.Antifraude.Core\bin\Debug\net8.0\Quod.Antifraude.Core.pdb
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.csproj.AssemblyReference.cache
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.AssemblyInfoInputs.cache
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.AssemblyInfo.cs
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.csproj.CoreCompileInputs.cache
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.dll
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap\src\Quod.Antifraude.Core\obj\Debug\net8.0\refint\Quod.Antifraude.Core.dll
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.pdb
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap\src\Quod.Antifraude.Core\obj\Debug\net8.0\ref\Quod.Antifraude.Core.dll
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap - Copia\src\Quod.Antifraude.Core\bin\Debug\net8.0\Quod.Antifraude.Core.deps.json
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap - Copia\src\Quod.Antifraude.Core\bin\Debug\net8.0\Quod.Antifraude.Core.dll
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap - Copia\src\Quod.Antifraude.Core\bin\Debug\net8.0\Quod.Antifraude.Core.pdb
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap - Copia\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.csproj.AssemblyReference.cache
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap - Copia\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap - Copia\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.AssemblyInfoInputs.cache
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap - Copia\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.AssemblyInfo.cs
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap - Copia\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.csproj.CoreCompileInputs.cache
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap - Copia\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.dll
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap - Copia\src\Quod.Antifraude.Core\obj\Debug\net8.0\refint\Quod.Antifraude.Core.dll
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap - Copia\src\Quod.Antifraude.Core\obj\Debug\net8.0\Quod.Antifraude.Core.pdb
+D:\Users\Gabri\Documents\Vs-net\Projeto QUOD Fiap - Copia\src\Quod.Antifraude.Core\obj\Debug\net8.0\ref\Quod.Antifraude.Core.dll

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "1mw7QMhS5aBMFpuD9eqRmFYAWtgRBCB8vOARzmieGJE=",
+  "Source": "Quod.Antifraude.Api",
+  "BasePath": "_content/Quod.Antifraude.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
