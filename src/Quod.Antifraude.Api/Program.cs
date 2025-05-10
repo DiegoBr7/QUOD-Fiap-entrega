@@ -1,14 +1,16 @@
-using Quod.Antifraude.Core.Repositories;
+ï»¿using Quod.Antifraude.Core.Repositories;
 using Quod.Antifraude.Core.Settings;
 using Quod.Antifraude.Infrastructure.Repositories;
 using Quod.Antifraude.Services.Detection;
 using Quod.Antifraude.Services.Notification;
 using System.Text.Json.Serialization;
-
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+// Adiciona suporte a controllers e converte enums para strings no JSON
 builder.Services
     .AddControllers()
     .AddJsonOptions(opts =>
@@ -17,25 +19,29 @@ builder.Services
         opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
-// configurações fortemente tipadas
+// ConfiguraÃ§Ãµes fortemente tipadas
 builder.Services
     .Configure<MongoSettings>(
     builder.Configuration.GetSection("MongoSettings"));
 builder.Services.Configure<NotificationSettings>(
     builder.Configuration.GetSection("NotificationSettings"));
 
-// injeção de dependências
+// InjeÃ§Ã£o de dependÃªncias
 builder.Services.AddSingleton<IValidacaoRepository, ValidacaoRepository>();
 builder.Services.AddScoped<IFraudDetectionService, FraudDetectionService>();
 builder.Services.AddHttpClient<INotificationService, NotificationService>();
 
-// controllers + Swagger/OpenAPI
+// Swagger/OpenAPI
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// ConfiguraÃ§Ã£o do MongoDB
+BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
+
 var app = builder.Build();
 
+// Habilita Swagger em ambiente de desenvolvimento
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
