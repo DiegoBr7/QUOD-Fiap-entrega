@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Quod.Antifraude.Api.props" />
-</Project>
