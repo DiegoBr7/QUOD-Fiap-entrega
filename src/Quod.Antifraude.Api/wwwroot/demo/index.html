@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8" />
+    <title>Demo de Validação Facial</title>
+    <style>
+        video, canvas {
+            width: 320px;
+            height: 240px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Validação Facial</h1>
+    <video id="preview" autoplay></video><br />
+    <button id="snap">Capturar e Enviar</button>
+    <canvas id="canvas" style="display:none"></canvas>
+
+    <script>
+        (function () {
+            const preview = document.getElementById('preview');
+            const canvas = document.getElementById('canvas');
+            const snap = document.getElementById('snap');
+
+            // 1) Pega a câmera
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => preview.srcObject = stream)
+                .catch(console.error);
+
+            // 2) Ao clicar, desenha no canvas e envia ao Swagger/API
+            snap.onclick = () => {
+                canvas.width = preview.videoWidth;
+                canvas.height = preview.videoHeight;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(preview, 0, 0);
+
+                canvas.toBlob(blob => {
+                    const form = new FormData();
+                    // Essas chaves devem bater com seu ValidacaoRequest.cs
+                    form.append('Imagem', blob, 'foto.png');
+                    form.append('TransacaoId', '3fa85f64-5717-4562-b3fc-2c963f66afa6');
+                    form.append('TipoBiometria', 'Facial');
+                    form.append('DataCaptura', new Date().toISOString());
+                    form.append('Dispositivo.Fabricante', 'MeuDevice');
+                    form.append('Dispositivo.Modelo', 'WebCam');
+                    form.append('Dispositivo.SistemaOperacional', 'Browser');
+                    form.append('MetadadosLocalizacao.Latitude', '-23.5');
+                    form.append('MetadadosLocalizacao.Longitude', '-46.6');
+                    form.append('MetadadosLocalizacao.IpOrigem', '127.0.0.1');
+
+                    // Aqui: ENDPOINT da sua API de validação
+                    fetch(' o', {
+                        method: 'POST',
+                        body: form
+                    })
+                        .then(response => {
+                            if (!response.ok) throw new Error(response.statusText);
+                            return response.json();
+                        })
+                        .then(result => {
+                            console.log('Resposta da API:', result);
+                            alert('Validação recebida: ' + JSON.stringify(result));
+                        })
+                        .catch(err => {
+                            console.error('Erro ao chamar API:', err);
+                            alert('Falha na validação: ' + err.message);
+                        });
+                }, 'image/png');
+            };
+        })();
+    </script>
+</body>
+</html>

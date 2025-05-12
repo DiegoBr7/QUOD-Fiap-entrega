@@ -5,7 +5,7 @@ using Quod.Antifraude.Core.Models;
 using Quod.Antifraude.Core.Repositories;
 using Quod.Antifraude.Services.Detection;
 using Quod.Antifraude.Services.Notification;
-using System.Threading.Tasks;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Quod.Antifraude.Api.Controllers
 {
@@ -27,50 +27,104 @@ namespace Quod.Antifraude.Api.Controllers
             _notiSvc = notiSvc;
         }
 
+        /// <summary>Simula validação de biometria facial.</summary>
         [HttpPost("facial")]
         [Consumes("multipart/form-data")]
-        public Task<IActionResult> Facial([FromForm] ValidacaoRequest req)
-            => ProcessAsync(req, isDocument: false);
+        [SwaggerOperation(
+            OperationId = "ValidacaoFacial",
+            Summary = "Valida imagem facial",
+            Description = "Detecta deepfake, máscara, liveness etc."    
+        )]
+        public async Task<IActionResult> Facial([FromForm] FacialRequest req)
+        {
+            // chama o serviço que retorna o resultado completo
+            var result = await _fraudSvc.ValidateFacialAsync(req.Imagem);
+
+            // persiste o registro
+            var reg = new RegistroValidacao
+            {
+                TransacaoId = req.TransacaoId,
+                DataCaptura = req.DataCaptura,
+                Dispositivo = req.Dispositivo,
+                MetadadosLocalizacao = req.MetadadosLocalizacao,
+                EhFraude = result.EhFraude,
+                TipoFraude = result.TipoFraude,
+                DataProcessamento = DateTime.UtcNow
+            };
+            await _repo.SaveAsync(reg);
+            if (result.EhFraude)
+                await _notiSvc.NotifyFraudAsync(reg);
+
+            // devolve payload estendido para o cliente
+            return Ok(new
+            {
+                reg.TransacaoId,
+                reg.EhFraude,
+                reg.TipoFraude,
+                result.Confidence,
+                result.FaceCount,
+                result.LivenessScore,
+                result.Observacao
+            });
+        }
+
+        /// <summary>Simula validação de biometria digital.</summary>
 
         [HttpPost("digital")]
         [Consumes("multipart/form-data")]
-        public Task<IActionResult> Digital([FromForm] ValidacaoRequest req)
-            => ProcessAsync(req, isDocument: false);
+        [SwaggerOperation(
+            OperationId = "ValidacaoDigital",
+            Summary = "Valida impressão digital",
+            Description = "Envia scan de digitais para detecção de deepfake/máscara etc."
+        )]
+        public async Task<IActionResult> Digital([FromForm] DigitalRequest req)
+        {
+            var result = await _fraudSvc.ValidateDigitalAsync(req.ImagemDigital);
 
+            var reg = new RegistroValidacao
+            {
+                TransacaoId = req.TransacaoId,
+                DataCaptura = req.DataCaptura,
+                Dispositivo = req.Dispositivo,
+                MetadadosLocalizacao = req.MetadadosLocalizacao,
+                EhFraude = result.EhFraude,
+                TipoFraude = result.TipoFraude,
+                DataProcessamento = DateTime.UtcNow
+            };
+            await _repo.SaveAsync(reg);
+            if (result.EhFraude)
+                await _notiSvc.NotifyFraudAsync(reg);
+
+            return Ok(new
+            {
+                reg.TransacaoId,
+                reg.EhFraude,
+                reg.TipoFraude,
+                result.Confidence,
+                result.Observacao
+            });
+        }
+
+
+
+        /// <summary>Simula análise de documentos (Documentoscopia).</summary>
         [HttpPost("documentos")]
         [Consumes("multipart/form-data")]
+        [SwaggerOperation(
+            OperationId = "ValidacaoDocumentos",
+            Summary = "Valida documento e selfie",
+            Description = "Detecta deepfake, máscara, foto de foto, etc."
+        )]
         public async Task<IActionResult> Documentos([FromForm] DocumentosRequest req)
         {
-            // rodamos o DetectDocumentosAsync:
             var (ehFraude, tipoFraude) = await _fraudSvc
                 .DetectDocumentosAsync(
                     req.Documento.OpenReadStream(),
                     req.ImagemFace.OpenReadStream());
 
-            return await FinalizeAsync(req, ehFraude, tipoFraude);
-        }
-
-        // roteiriza biometria facial/digital
-        private async Task<IActionResult> ProcessAsync(
-            ValidacaoRequest req,
-            bool isDocument)
-        {
-            var (ehFraude, tipoFraude) =
-                await _fraudSvc.DetectAsync(req.Imagem);
-
-            return await FinalizeAsync(req, ehFraude, tipoFraude);
-        }
-
-        // faz persistência, notificação e devolve
-        private async Task<IActionResult> FinalizeAsync(
-            BaseCapturaDto req,
-            bool ehFraude,
-            TipoFraude? tipoFraude)
-        {
-            var registro = new RegistroValidacao
+            var reg = new RegistroValidacao
             {
                 TransacaoId = req.TransacaoId,
-                TipoBiometria = req.TipoBiometria,
                 DataCaptura = req.DataCaptura,
                 Dispositivo = req.Dispositivo,
                 MetadadosLocalizacao = req.MetadadosLocalizacao,
@@ -78,12 +132,11 @@ namespace Quod.Antifraude.Api.Controllers
                 TipoFraude = tipoFraude,
                 DataProcessamento = DateTime.UtcNow
             };
-
-            await _repo.SaveAsync(registro);
+            await _repo.SaveAsync(reg);
             if (ehFraude)
-                await _notiSvc.NotifyFraudAsync(registro);
+                await _notiSvc.NotifyFraudAsync(reg);
 
-            return Ok(registro);
+            return Ok(reg);
         }
     }
 }

@@ -4,51 +4,84 @@ using Quod.Antifraude.Infrastructure.Repositories;
 using Quod.Antifraude.Services.Detection;
 using Quod.Antifraude.Services.Notification;
 using System.Text.Json.Serialization;
+using Quod.Antifraude.Api.Filters;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Adiciona suporte a controllers e converte enums para strings no JSON
+// 1) Controllers + enum-as-string no JSON
 builder.Services
     .AddControllers()
     .AddJsonOptions(opts =>
     {
-        // Faz com que todos os enums sejam serializados/deserializados como string
         opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
-// Configurações fortemente tipadas
-builder.Services
-    .Configure<MongoSettings>(
+// 2) Configurações fortemente tipadas
+builder.Services.Configure<MongoSettings>(
     builder.Configuration.GetSection("MongoSettings"));
 builder.Services.Configure<NotificationSettings>(
     builder.Configuration.GetSection("NotificationSettings"));
 
-// Injeção de dependências
+// 3) Injeção de dependências
 builder.Services.AddSingleton<IValidacaoRepository, ValidacaoRepository>();
 builder.Services.AddScoped<IFraudDetectionService, FraudDetectionService>();
 builder.Services.AddHttpClient<INotificationService, NotificationService>();
 
-// Swagger/OpenAPI
-builder.Services.AddControllers();
+// 4) Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Quod.Antifraude.Api",
+        Version = "v1",
+        Description = "API de simulação de antifraude"
+    });
+    c.EnableAnnotations();
+    c.SchemaFilter<DisplaySchemaFilter>();
+});
 
-// Configuração do MongoDB
-BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
+// 5) Serializador de GUID para MongoDB
+BsonSerializer.RegisterSerializer(
+    new GuidSerializer(GuidRepresentation.Standard));
 
 var app = builder.Build();
 
-// Habilita Swagger em ambiente de desenvolvimento
+// 1) HTTPS e Roteamento
+app.UseHttpsRedirection();
+app.UseRouting();
+
+// 2) Swagger (sempre antes do StaticFiles)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Quod.Antifraude.Api v1");
+        c.RoutePrefix = "swagger";
+    });
 }
 
-app.UseHttpsRedirection();
+// 3) Static files – mas restringindo DefaultFiles ao root apenas
+var defaultFilesOptions = new DefaultFilesOptions();
+defaultFilesOptions.DefaultFileNames.Clear();
+// Não adiciona subpastas, logo /swagger não será interceptado aqui
+app.UseDefaultFiles(defaultFilesOptions);
+app.UseStaticFiles();
+
+// 4) Autorização e Controllers
 app.UseAuthorization();
 app.MapControllers();
+
+// 5) Fallback para SPA em /demo
+//app.MapFallback(context =>
+//{
+//context.Response.Redirect("   ");
+//return Task.CompletedTask;
+//});
+
 app.Run();

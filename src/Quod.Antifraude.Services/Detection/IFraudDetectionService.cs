@@ -8,7 +8,13 @@ namespace Quod.Antifraude.Services.Detection
 {
     public interface IFraudDetectionService
     {
-        Task<(bool ehFraude, TipoFraude? tipoFraude)> DetectAsync(IFormFile imagem);
-        Task<(bool ehFraude, TipoFraude? tipoFraude)> DetectDocumentosAsync(Stream documento, Stream selfie);
+        Task<FacialValidationResult> ValidateFacialAsync(IFormFile imagem);
+
+        // Novo método para digitais:
+        Task<FacialValidationResult> ValidateDigitalAsync(IFormFile imagemDigital);
+
+        Task<(bool EhFraude, TipoFraude? TipoFraude)> DetectDocumentosAsync(
+            Stream doc,
+            Stream selfie);
     }
 }

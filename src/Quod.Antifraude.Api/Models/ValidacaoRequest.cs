@@ -1,4 +1,4 @@
-﻿// src/Quod.Antifraude.Api/Models/ValidacaoRequest.cs
+﻿    // src/Quod.Antifraude.Api/Models/ValidacaoRequest.cs
 using Microsoft.AspNetCore.Http;
 using Quod.Antifraude.Core.Models;
 
