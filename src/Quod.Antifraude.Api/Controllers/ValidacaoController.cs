@@ -71,16 +71,17 @@ namespace Quod.Antifraude.Api.Controllers
             {
                 TransacaoId = req.TransacaoId,
                 TipoBiometria = req.TipoBiometria,
+                SimularFraude = req.SimularFraude,
                 DataCaptura = req.DataCaptura,
                 Dispositivo = req.Dispositivo,
                 MetadadosLocalizacao = req.MetadadosLocalizacao,
-                EhFraude = ehFraude,
+                //EhFraude = ehFraude,
                 TipoFraude = tipoFraude,
                 DataProcessamento = DateTime.UtcNow
             };
 
             await _repo.SaveAsync(registro);
-            if (ehFraude)
+            if (registro.SimularFraude == SimularFraude.True)
                 await _notiSvc.NotifyFraudAsync(registro);
 
             return Ok(registro);
