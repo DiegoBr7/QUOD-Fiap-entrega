@@ -1,18 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
-
 	<ItemGroup>
+		<!-- Lógica de negócio e Documentoscopia -->
 		<ProjectReference Include="..\Quod.Antifraude.Core\Quod.Antifraude.Core.csproj" />
-		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
-		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.4" />
+		<ProjectReference Include="..\Quod.Antifraude.Infrastructure\Quod.Antifraude.Infrastructure.csproj" />
+		<!-- OCR e processamento de imagem -->
+		<PackageReference Include="SixLabors.ImageSharp" Version="3.1.0" />
+		<PackageReference Include="Tesseract" Version="4.1.1" />
+		<!-- Necessário para IWebHostEnvironment e IFormFile -->
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
-
-
 </Project>
-		

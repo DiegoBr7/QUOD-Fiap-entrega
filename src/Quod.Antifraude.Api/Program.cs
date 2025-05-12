@@ -1,47 +1,71 @@
-﻿using Quod.Antifraude.Core.Repositories;
-using Quod.Antifraude.Core.Settings;
+﻿using Quod.Antifraude.Core.Settings;
+using Quod.Antifraude.Core.Models;
 using Quod.Antifraude.Infrastructure.Repositories;
+using Quod.Antifraude.Core.Repositories;
 using Quod.Antifraude.Services.Detection;
 using Quod.Antifraude.Services.Notification;
-using System.Text.Json.Serialization;
+using Quod.Antifraude.Services.Documentoscopia;        // ➊
+using Quod.Antifraude.Api.Filters;
+using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Driver;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Adiciona suporte a controllers e converte enums para strings no JSON
+// 1) Controllers + enums como string
 builder.Services
     .AddControllers()
     .AddJsonOptions(opts =>
-    {
-        // Faz com que todos os enums sejam serializados/deserializados como string
-        opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-    });
+        opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())
+    );
 
-// Configurações fortemente tipadas
-builder.Services
-    .Configure<MongoSettings>(
+// 2) Configurações tipadas
+builder.Services.Configure<MongoSettings>(
     builder.Configuration.GetSection("MongoSettings"));
 builder.Services.Configure<NotificationSettings>(
     builder.Configuration.GetSection("NotificationSettings"));
 
-// Injeção de dependências
+// 3) Antifraude e Notificação
 builder.Services.AddSingleton<IValidacaoRepository, ValidacaoRepository>();
 builder.Services.AddScoped<IFraudDetectionService, FraudDetectionService>();
 builder.Services.AddHttpClient<INotificationService, NotificationService>();
 
-// Swagger/OpenAPI
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// 4) MongoDB no DI
+builder.Services.AddSingleton<IMongoClient>(sp =>
+{
+    var s = sp.GetRequiredService<IOptions<MongoSettings>>().Value; 
+    return new MongoClient(s.ConnectionString);
+});
+builder.Services.AddScoped(sp =>
+{
+    var s = sp.GetRequiredService<IOptions<MongoSettings>>().Value;
+    return sp.GetRequiredService<IMongoClient>().GetDatabase(s.DatabaseName);
+});
+builder.Services.AddScoped<IMongoCollection<Pessoa>>(sp =>
+    sp.GetRequiredService<IMongoDatabase>().GetCollection<Pessoa>("DocumentosDB"));
 
-// Configuração do MongoDB
+// 5) **Documentoscopia** — aqui faltava! ➋
+builder.Services.AddSingleton<ImageProcessingService>();
+builder.Services.AddScoped<CpfExtractionService>();
+builder.Services.AddSingleton<CpfValidationService>();
+builder.Services.AddScoped<DocumentAnalysisService>();
+
+// 6) Swagger/OpenAPI com filtro de upload
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.OperationFilter<FileUploadOperationFilter>();
+});
+
+// 7) Bson GUID
 BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
 
 var app = builder.Build();
 
-// Habilita Swagger em ambiente de desenvolvimento
+// 8) Swagger UI em dev
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

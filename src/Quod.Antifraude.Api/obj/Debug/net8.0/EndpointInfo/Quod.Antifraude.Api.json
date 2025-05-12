@@ -1,0 +1,151 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Quod.Antifraude.Api",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Documentos/analisar": {
+      "post": {
+        "tags": [
+          "Documentos"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "imagem"
+                ],
+                "type": "object",
+                "properties": {
+                  "imagem": {
+                    "type": "string",
+                    "description": "Selecione o arquivo de imagem",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Validacao/facial": {
+      "post": {
+        "tags": [
+          "Validacao"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "imagem"
+                ],
+                "type": "object",
+                "properties": {
+                  "imagem": {
+                    "type": "string",
+                    "description": "Selecione o arquivo de imagem",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Validacao/digital": {
+      "post": {
+        "tags": [
+          "Validacao"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "imagem"
+                ],
+                "type": "object",
+                "properties": {
+                  "imagem": {
+                    "type": "string",
+                    "description": "Selecione o arquivo de imagem",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Validacao/documentos": {
+      "post": {
+        "tags": [
+          "Validacao"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "imagem"
+                ],
+                "type": "object",
+                "properties": {
+                  "imagem": {
+                    "type": "string",
+                    "description": "Selecione o arquivo de imagem",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SimularFraude": {
+        "enum": [
+          "False",
+          "True"
+        ],
+        "type": "string"
+      },
+      "TipoBiometria": {
+        "enum": [
+          "Facial",
+          "Digital"
+        ],
+        "type": "string"
+      }
+    }
+  }
+}
