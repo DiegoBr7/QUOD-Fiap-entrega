@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Collections.Generic;
 
 namespace Quod.Antifraude.Core.Models
 {
@@ -9,7 +10,11 @@ namespace Quod.Antifraude.Core.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
 
-        [BsonElement("cpf")]
-        public string Cpf { get; set; } = null!;
+        public string? Nome { get; set; }
+        public string? Cpf { get; set; }
+        public DateTime DataNascimento { get; set; }
+
+        // armazenar o template da digital
+        public string? TemplateBiometriaDigital { get; set; }
     }
 }

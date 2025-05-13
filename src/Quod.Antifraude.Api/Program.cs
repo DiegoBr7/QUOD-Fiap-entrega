@@ -12,6 +12,7 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 using System.Text.Json.Serialization;
+using Quod.Antifraude.Services.Biometria;
 
 var builder = WebApplication.CreateBuilder(args);
 
