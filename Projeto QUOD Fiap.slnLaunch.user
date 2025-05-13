@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "API + EMGU ",
+    "Projects": [
+      {
+        "Path": "src\\Quod.Antifraude.Api\\Quod.Antifraude.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\Quod.DeteccaoRostoEmguCV\\Quod.DeteccaoRostoEmguCV.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
