@@ -9,13 +9,19 @@ O **Quod Antifraude** é uma solução moderna para análise e validação de do
 ## Requisitos do Sistema
 
 ### API (.NET 8)
+
 - .NET 8 SDK
+
 - MongoDB (local ou remoto)
+
 - Sistema operacional: Windows, Linux ou macOS
 
 ### Aplicativo Desktop (Detecção Facial)
+
 - .NET Framework 4.8
+
 - Windows 7 ou superior
+
 - Webcam (para detecção facial em tempo real)
 
 ---
@@ -41,26 +47,23 @@ O **Quod Antifraude** é uma solução moderna para análise e validação de do
 
 `git clone https://github.com/DiegoBr7/QUOD-Fiap-entrega.git`
 
-
 ### 2. Configurar o MongoDB
 
 - Instale e inicie o MongoDB localmente **ou** utilize um serviço em nuvem.
 - Altere a string de conexão no arquivo `appsettings.json` da API:
 
-```
+```json
 "MongoSettings": {
   "ConnectionString": "mongodb://localhost:27017",
   "DatabaseName": "QuodAntifraude"
   }
 ```
 
-
 ### 3. Compilar e Executar a API
 
 `cd src/Quod.Antifraude.Api`
 `dotnet build`
 `dotnet run`
-
 
 A API estará disponível em `https://localhost:5001` (ou porta configurada).
 
@@ -111,4 +114,4 @@ src/<br>
 - **Gabriel Paulucci**
 
   Estudantes de Análise e Desenvolvimento de Sistemas - FIAP
-  GitHub: https://github.com/DiegoBr7/QUOD-Fiap-entrega
+  GitHub: <https://github.com/DiegoBr7/QUOD-Fiap-entrega>
