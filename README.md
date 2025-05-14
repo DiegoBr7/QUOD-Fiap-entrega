@@ -82,13 +82,12 @@ Teste os endpoints diretamente pela interface.
 
 ## Estrutura do Projeto
 
-src/
-├── Quod.Antifraude.Api/           # API principal (.NET 8)
-├── Quod.Antifraude.Core/          # Modelos e contratos
-├── Quod.Antifraude.Infrastructure/# Repositórios e integração com MongoDB
-├── Quod.Antifraude.Services/      # Serviços de negócio, OCR, validação, biometria
-├── Quod.DeteccaoRostoEmguCV/      # Aplicativo desktop de detecção facial (.NET Framework 4.8)
-
+src/<br>
+├── Quod.Antifraude.Api/           # API principal (.NET 8)<br>
+├── Quod.Antifraude.Core/          # Modelos e contratos<br>
+├── Quod.Antifraude.Infrastructure/# Repositórios e integração com MongoDB<br>
+├── Quod.Antifraude.Services/      # Serviços de negócio, OCR, validação, biometria<br>
+├── Quod.DeteccaoRostoEmguCV/      # Aplicativo desktop de detecção facial (.NET Framework 4.8)<br>
 
 ---
 
