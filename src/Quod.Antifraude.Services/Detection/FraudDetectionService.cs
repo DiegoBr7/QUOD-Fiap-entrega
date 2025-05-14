@@ -1,10 +1,6 @@
 ﻿// src/Quod.Antifraude.Services/Detection/FraudDetectionService.cs
 using Microsoft.AspNetCore.Http;
 using Quod.Antifraude.Core.Models;
-using System;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Quod.Antifraude.Services.Detection
 {

@@ -5,7 +5,7 @@ using Quod.Antifraude.Core.Repositories;
 
 namespace Quod.Antifraude.Services.Biometria
 {
-    public class BiometriaDigitalService    : IBiometriaDigitalService
+    public class BiometriaDigitalService : IBiometriaDigitalService
     {
         private readonly IBiometriaDigitalRepository _biometriaRepo;
 

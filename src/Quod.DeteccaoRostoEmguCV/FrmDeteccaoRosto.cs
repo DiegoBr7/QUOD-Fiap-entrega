@@ -1,8 +1,8 @@
-﻿using Emgu.CV;
-using Emgu.CV.Structure;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Emgu.CV;
+using Emgu.CV.Structure;
 
 namespace Quod.DeteccaoRostoEmguCV
 {
@@ -10,7 +10,7 @@ namespace Quod.DeteccaoRostoEmguCV
     {
         static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
         VideoCapture capture;
-        
+
         public FrmDeteccaoRosto()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace Quod.DeteccaoRostoEmguCV
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Multiselect = false, Filter = "JPEG|*.jpg" })
             {
-                if(ofd.ShowDialog() == DialogResult.OK)
+                if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     ProcessarImagem(new Bitmap(Image.FromFile(ofd.FileName)));
                 }
@@ -29,7 +29,7 @@ namespace Quod.DeteccaoRostoEmguCV
 
         private void iniciarWebCamToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(capture != null)
+            if (capture != null)
             {
                 MessageBox.Show("A webcam já está iniciada!");
                 return;

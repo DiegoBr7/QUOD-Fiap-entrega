@@ -22,7 +22,7 @@ namespace Quod.Antifraude.Infrastructure.Repositories
         {
             // Opção 1: Coleção separada
             // Opção 2: Atualizar documento Pessoa 
-            var filter = Builders<Pessoa>.Filter.Eq(p => p.Id, biometria.PessoaId.ToString()); 
+            var filter = Builders<Pessoa>.Filter.Eq(p => p.Id, biometria.PessoaId.ToString());
             var update = Builders<Pessoa>.Update.Set(p => p.TemplateBiometriaDigital, biometria.TemplateDigital);
             await _pessoaCollection.UpdateOneAsync(filter, update, new UpdateOptions { IsUpsert = false });
         }

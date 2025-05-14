@@ -1,6 +1,6 @@
 ﻿using SixLabors.ImageSharp;
-using Img = SixLabors.ImageSharp.Image;
 using SixLabors.ImageSharp.Processing;
+using Img = SixLabors.ImageSharp.Image;
 // (remova qualquer `using System.Net.Mime;` se existir)
 
 public class ImageProcessingService

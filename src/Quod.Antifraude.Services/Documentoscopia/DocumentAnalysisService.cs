@@ -1,6 +1,5 @@
-﻿using System.IO;
+﻿using MongoDB.Driver;
 using Quod.Antifraude.Core.Models;
-using MongoDB.Driver;
 
 namespace Quod.Antifraude.Services.Documentoscopia
 {

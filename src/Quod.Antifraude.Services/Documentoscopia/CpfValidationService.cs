@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace Quod.Antifraude.Services.Documentoscopia
+﻿namespace Quod.Antifraude.Services.Documentoscopia
 {
     public class CpfValidationService
     {

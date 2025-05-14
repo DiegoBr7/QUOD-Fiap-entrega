@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Quod.Antifraude.Core.Models;
+﻿using Quod.Antifraude.Core.Models;
 
 namespace Quod.Antifraude.Services.Notification
 {

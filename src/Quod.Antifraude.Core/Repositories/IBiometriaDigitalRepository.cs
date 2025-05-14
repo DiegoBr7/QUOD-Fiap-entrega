@@ -9,5 +9,5 @@ namespace Quod.Antifraude.Core.Repositories
         Task<Pessoa?> ObterPessoaComDigitalPorCpfAsync(string cpf); // Para buscar template junto com Pessoa
     }
 }
-    
+
 

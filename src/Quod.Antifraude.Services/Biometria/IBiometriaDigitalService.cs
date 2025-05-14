@@ -1,6 +1,6 @@
 ﻿namespace Quod.Antifraude.Services.Biometria
 {
-     public interface IBiometriaDigitalService
+    public interface IBiometriaDigitalService
     {
         Task<string> SimularCapturaDigitalAsync(); // Retorna um "template" simulado
         Task<bool> RegistrarDigitalAsync(Guid pessoaId, string templateDigital);
