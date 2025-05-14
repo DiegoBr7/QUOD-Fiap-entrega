@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    <NoWarn>$(NoWarn);NU1507</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="EMGU.CV" Version="4.1.1.3497" />
+    <PackageVersion Include="MetadataExtractor" Version="2.8.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.4" />
+    <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageVersion Include="MongoDB.Driver" Version="3.3.0" />
+    <PackageVersion Include="SixLabors.ImageSharp" Version="3.1.8" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageVersion Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
+    <PackageVersion Include="Tesseract" Version="4.1.1" />
+    <PackageVersion Include="ZedGraph" Version="5.1.7" />
+  </ItemGroup>
+</Project>
